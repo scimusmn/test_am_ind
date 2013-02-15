@@ -1,0 +1,5 @@
+# Kiosk settings
+[kiosk]
+home_url: http://example.com
+fullscreen_kiosk: False
+user_agent: custom_agent
