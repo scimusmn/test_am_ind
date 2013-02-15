@@ -11,7 +11,7 @@ Download and install the [appropriate version of ChromeDriver for your OS](http:
 
 ### 4. Download chrome_kiosk
 ```bash
-$ git clone git://github.com/bryankennedy/chrome_kiosk.git
+$ git clone git://github.com/scimusmn/chrome-kiosk.git
 ```
 
 ### 5. Configure
