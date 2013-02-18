@@ -1,3 +1,6 @@
+# Work in Progress
+This is an untested sketch and is not ready for production.
+
 # Installation
 ### 1. Install Python
 ### 2. Install the Selenium Python wrapper
