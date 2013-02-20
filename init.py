@@ -4,17 +4,12 @@
 
 import ConfigParser
 import collections
-import os
-import sys
-
-SCRIPT_PATH, __ = os.path.split(sys.argv[0])
 
 
 def get_config():
     """Load kiosk config """
     config = ConfigParser.ConfigParser()
-    config_file = SCRIPT_PATH + "/browser.cfg"
-    config.read(config_file)
+    config.read("browser.cfg")
 
     browser = collections.namedtuple('name', 'value')
 
