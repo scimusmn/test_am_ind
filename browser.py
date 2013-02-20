@@ -12,6 +12,11 @@ CFG = get_config()
 
 
 class AmIndVideoPlay(unittest.TestCase):
+    """Test the video playback on the American Indian exhibit kiosks
+
+    Extends the unittest class. Any methods starting with test_ will better
+    run as tests.
+    """
 
     def setUp(self):
         """Setup the Chome browser for testing """
