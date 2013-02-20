@@ -37,8 +37,9 @@ class AmIndVideoPlay(unittest.TestCase):
         # Launch a Chrome instance with the appropriate options
         try:
             self.driver = webdriver.Chrome(chrome_options=options)
-        except:
-            self.driver = webdriver.Chrome(chrome_options=options)
+        except webdriver.WebDriverException:
+            chrome_path = 'c:\Program Files (x86)\chromedriver.exe'
+            self.driver = webdriver.Chrome(chrome_path, chrome_options=options)
 
     def play_video_tab(self, id):
         driver = self.driver
