@@ -24,13 +24,6 @@ class AmIndVideoPlay(unittest.TestCase):
         if CFG['kiosk']:
             options.add_argument('--kiosk')
 
-        #options.add_argument('--disable-accelerated-video-decode')
-        #options.add_argument('--disable-accelerated-video')
-        #options.add_argument('--crash-on-gpu-hang')
-        #options.add_argument('--performance-monitor-gathering')
-        #options.add_argument('--enable-logging')
-        #options.add_argument('--v=1')
-
         # Alternatively launch the webdriver Firefox browser
         # test whether Firefox loads the videos better
 
