@@ -14,6 +14,7 @@ CFG = get_config()
 class AmIndVideoPlay(unittest.TestCase):
 
     def setUp(self):
+        """Setup the Chome browser for testing """
         options = webdriver.ChromeOptions()
 
         # Define a custom User Agent
@@ -44,6 +45,23 @@ class AmIndVideoPlay(unittest.TestCase):
                 else:
                     break
 
+    def test_video_play_on_am_ind(self):
+        driver = self.driver
+
+        # Visit a page
+        driver.get(CFG['home_url'])
+
+        # Loop over all three tabs
+        for id in range(1, 4):
+            self.play_video_tab(id)
+
+        for id in range(1, 4):
+            self.play_video_tab(id)
+
+    def tearDown(self):
+        #self.driver.close()
+        self.driver.quit()
+
     def play_video_tab(self, id):
         driver = self.driver
         id = str(id)
@@ -66,22 +84,6 @@ class AmIndVideoPlay(unittest.TestCase):
         # playing properly. If so then the video has passed the test.
         time.sleep(video.duration + 1)  # Pad the duration a second
 
-    def test_video_play_on_am_ind(self):
-        driver = self.driver
-
-        # Visit a page
-        driver.get(CFG['home_url'])
-
-        # Loop over all three tabs
-        for id in range(1, 4):
-            self.play_video_tab(id)
-
-        for id in range(1, 4):
-            self.play_video_tab(id)
-
-    def tearDown(self):
-        #self.driver.close()
-        self.driver.quit()
 
 if __name__ == "__main__":
     unittest.main()
