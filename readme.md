@@ -12,19 +12,17 @@ $ sudo pip install selenium
 ### 3. Install ChromeDriver
 Download and install the [appropriate version of ChromeDriver for your OS](http://code.google.com/p/chromedriver/downloads/list)
 
-### 4. Download chrome_kiosk
+### 4. Download test_am_in
 ```bash
-$ git clone git://github.com/scimusmn/chrome-kiosk.git
+$ git clone git@github.com:scimusmn/test_am_ind.git
 ```
 
 ### 5. Configure
-```bash
-$ cp browser.cfg.default browser.cfg
-```
-Edit the browser.cfg file and define your values.
+If you need to change any of the configurations you can edit the browser.cfg file, but some elements are still hard coded into the browser.py file. So this config isn't that changeable yet.
 
 ### 6. Run chrome_kiosk
 ```bash
-$ cd chrome_kiosk
-$ python chrome_kiosk
+$ cd test_am_in
+$ chmod +x browser.py
+$ ./browser.py
 ```
