@@ -35,14 +35,16 @@ class AmIndVideoPlay(unittest.TestCase):
         # test whether Firefox loads the videos better
 
         # Launch a Chrome instance with the appropriate options
-        chrome_paths = ('c:\Program Files (x86)\chromedriver.exe')
+        chrome_paths = ('c:\Program Files (x86)\chromedriver.exe',
+                        'c:\Program Files\chromedriver.exe')
         for chrome_path in chrome_paths:
             try:
                 self.driver = webdriver.Chrome(chrome_options=options)
-                break
             except webdriver.chrome.webdriver.WebDriverException:
                 self.driver = webdriver.Chrome(chrome_path,
                                                chrome_options=options)
+            else:
+                break
 
     def play_video_tab(self, id):
         driver = self.driver
