@@ -56,12 +56,21 @@ class AmIndVideoPlay(unittest.TestCase):
         # Visit a page
         driver.get(CFG['home_url'])
 
-        # Loop over all three tabs
-        for id in range(1, 4):
-            self.play_video_tab(id)
+        while True:
+            print
+            print "----"
+            current_url = driver.current_url
+            print current_url
+            print "----"
+            print
+            time.sleep(2)
 
-        for id in range(1, 4):
-            self.play_video_tab(id)
+        # Loop over all three tabs
+        #for id in range(1, 4):
+            #self.play_video_tab(id)
+
+        #for id in range(1, 4):
+            #self.play_video_tab(id)
 
     def tearDown(self):
         #self.driver.close()
