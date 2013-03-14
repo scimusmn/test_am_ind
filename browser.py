@@ -58,7 +58,7 @@ class AmIndVideoPlay(unittest.TestCase):
         # Visit a page
         driver.get(CFG['home_url'])
 
-        self.check_domain(driver)
+        self.check_domain()
 
     def tearDown(self):
         #self.driver.close()
