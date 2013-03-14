@@ -2,6 +2,7 @@
 from selenium import webdriver
 import unittest
 import time
+import re
 
 # Local modules
 from init import get_config
@@ -50,7 +51,7 @@ class AmIndVideoPlay(unittest.TestCase):
                 else:
                     break
 
-    def test_video_play_on_am_ind(self):
+    def test_on_home_domain(self):
         driver = self.driver
 
         # Visit a page
@@ -58,20 +59,12 @@ class AmIndVideoPlay(unittest.TestCase):
 
         while True:
             current_url = driver.current_url
-            print
-            print "----"
-            print current_url
-            print "----"
-            print
-            if current_url != 'http://projects.smm.org/test/selenium.html':
+            match = re.search('.*projects.smm.org.*', current_url)
+            if match:
+                print "Match is True"
+            else:
+                print "Match is False"
                 driver.get(CFG['home_url'])
-
-        # Loop over all three tabs
-        #for id in range(1, 4):
-            #self.play_video_tab(id)
-
-        #for id in range(1, 4):
-            #self.play_video_tab(id)
 
     def tearDown(self):
         #self.driver.close()
