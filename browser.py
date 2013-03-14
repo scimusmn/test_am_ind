@@ -51,24 +51,32 @@ class AmIndVideoPlay(unittest.TestCase):
                 else:
                     break
 
-    def test_on_home_domain(self):
+    def test_kiosk(self):
+        """Launch a chrome kiosk instance """
         driver = self.driver
 
         # Visit a page
         driver.get(CFG['home_url'])
 
-        while True:
-            current_url = driver.current_url
-            match = re.search('.*projects.smm.org.*', current_url)
-            if match:
-                print "Match is True"
-            else:
-                print "Match is False"
-                driver.get(CFG['home_url'])
+        self.check_domain(driver)
 
     def tearDown(self):
         #self.driver.close()
         self.driver.quit()
+
+    def check_domain(self):
+        """Check that you are on the specified domain
+
+        If the user navigates away return to the homepage in the CFG.
+        """
+        driver = self.driver
+        while True:
+            current_url = driver.current_url
+            match = re.search('.*projects.smm.org.*', current_url)
+            if match:
+                pass
+            else:
+                driver.get(CFG['home_url'])
 
     def play_video_tab(self, id):
         driver = self.driver
