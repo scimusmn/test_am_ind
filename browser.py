@@ -57,13 +57,14 @@ class AmIndVideoPlay(unittest.TestCase):
         driver.get(CFG['home_url'])
 
         while True:
+            current_url = driver.current_url
             print
             print "----"
-            current_url = driver.current_url
             print current_url
             print "----"
             print
-            time.sleep(2)
+            if current_url != 'http://projects.smm.org/test/selenium.html':
+                driver.get(CFG['home_url'])
 
         # Loop over all three tabs
         #for id in range(1, 4):
