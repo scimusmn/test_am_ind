@@ -1,5 +1,5 @@
-# Work in Progress
-This is an untested sketch and is not ready for production.
+# Out of date
+This was a test sketch for a browse control system. It has been replaced by [Stele](https://github.com/scimusmn/stele)
 
 # Installation
 ### 1. Install Python
